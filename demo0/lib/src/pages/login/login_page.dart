@@ -8,6 +8,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,8 +39,12 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextField(decoration: InputDecoration(labelText: "Username")),
-          TextField(decoration: InputDecoration(labelText: "Password")),
+          TextField(
+            controller: _usernameController,
+              decoration: InputDecoration(labelText: "Username")),
+          TextField(
+            controller: _passwordController,
+              decoration: InputDecoration(labelText: "Password")),
           SizedBox(height: 50,),
           ElevatedButton(onPressed: (){}, child: Text("Login")),
           OutlinedButton(onPressed: (){}, child: Text("Register"))
