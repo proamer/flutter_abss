@@ -4,9 +4,13 @@ import 'pages.dart';
 class AppRoute {
   static const home = 'home';
   static const login = 'login';
+  static const management = 'management';
+  static const map = 'map';
 
   static get all => <String, WidgetBuilder>{
     login: (context) => const LoginPage(),
-    home: (context) => const HomePage()
+    home: (context) => const HomePage(),
+    management: (context) => const ManagementPage(),
+    map: (context) => const MapPage(),
   };
 }
