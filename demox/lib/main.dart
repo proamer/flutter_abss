@@ -1,3 +1,4 @@
+import 'package:demox/src/home_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: _buildAWidget(),
-      home: AWidget(),
+      home: HomePage(),
     );
   }
 
