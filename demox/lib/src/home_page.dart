@@ -12,7 +12,15 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("HomePage")),
-      body: Text("Lek1"),
+      body: Container(
+        color: Colors.red,
+        child: Column(
+          children: [
+            Text("Lek1"),
+            Text("Lek2"),
+          ],
+        ),
+      ),
     );
   }
 }
