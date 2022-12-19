@@ -12,14 +12,11 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          width: double.infinity,
+            width: double.infinity,
             height: double.infinity,
             color: Colors.black,
             child: Column(
-              children: [
-                _buildBanner(),
-                _buildForm()
-              ],
+              children: [_buildBanner(), _buildForm()],
             )));
   }
 
@@ -28,6 +25,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _buildForm() {
-    return Container(child: Text("Form"), height: 300, color: Colors.white,);
+    return Container(
+      child: Text("Form"),
+      height: 300,
+      color: Colors.white,
+    );
   }
 }
