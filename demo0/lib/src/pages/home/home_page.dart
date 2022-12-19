@@ -14,6 +14,14 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text('HomePage'),
         ),
-        body: Text("OGA"));
+        body: Column(
+          children: [
+            Text("OGA"),
+            ElevatedButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text("Back"),
+            )
+          ],
+        ));
   }
 }
