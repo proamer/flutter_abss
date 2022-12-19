@@ -20,17 +20,16 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            _buildMyText(),
-            Text("Lek2", style: TextStyle(fontSize: 30)),
-            Text("Lek2", style: TextStyle(fontSize: 30)),
-            Text("Lek2", style: TextStyle(fontSize: 30)),
+            _buildMyText("Lek1"),
+            _buildMyText("Lek2"),
+            _buildMyText("Lek3"),
           ],
         ),
       ),
     );
   }
 
-  _buildMyText() {
-    return Text("Lek1", style: TextStyle(fontSize: 30));
+  _buildMyText(String value) {
+    return Text(value, style: TextStyle(fontSize: 30));
   }
 }
