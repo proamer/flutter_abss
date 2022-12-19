@@ -46,8 +46,24 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextField(controller: _usernameController, decoration: InputDecoration(labelText: "Username")),
-          TextField(controller: _passwordController, decoration: InputDecoration(labelText: "Password")),
+          TextField(
+            controller: _usernameController,
+            decoration: const InputDecoration(
+              border: InputBorder.none,
+              hintText: 'codemobiles@gmail.com',
+              labelText: 'Username',
+              icon: Icon(Icons.email),
+            ),
+          ),
+          TextField(
+            controller: _passwordController,
+            decoration: const InputDecoration(
+              border: InputBorder.none,
+              hintText: 'Enter password',
+              labelText: 'Password',
+              icon: Icon(Icons.password_outlined),
+            ),
+          ),
           SizedBox(
             height: 50,
           ),
@@ -63,14 +79,11 @@ class _LoginPageState extends State<LoginPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return Dialog(child: SizedBox(
+        return Dialog(
+            child: SizedBox(
           height: 300,
           child: Column(
-            children: [
-              Text("Debug"),
-              Text("Username: ${_usernameController.text}"),
-              Text("Password: ${_passwordController.text}")
-            ],
+            children: [Text("Debug"), Text("Username: ${_usernameController.text}"), Text("Password: ${_passwordController.text}")],
           ),
         ));
       },
