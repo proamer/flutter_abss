@@ -39,18 +39,27 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          TextField(
-            controller: _usernameController,
-              decoration: InputDecoration(labelText: "Username")),
-          TextField(
-            controller: _passwordController,
-              decoration: InputDecoration(labelText: "Password")),
-          SizedBox(height: 50,),
-          ElevatedButton(onPressed: (){}, child: Text("Login")),
-          OutlinedButton(onPressed: (){}, child: Text("Register"))
+          TextField(controller: _usernameController, decoration: InputDecoration(labelText: "Username")),
+          TextField(controller: _passwordController, decoration: InputDecoration(labelText: "Password")),
+          SizedBox(
+            height: 50,
+          ),
+          ElevatedButton(onPressed: _handleLogin, child: Text("Login")),
+          OutlinedButton(onPressed: _handleRegister, child: Text("Register"))
         ],
       ),
       color: Colors.white,
     );
   }
+
+  void _handleLogin() {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(child: Text("Hey"));
+      },
+    );
+  }
+
+  void _handleRegister() {}
 }
