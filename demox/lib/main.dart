@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: _buildAWidget(),
+      // home: _buildAWidget(),
+      home: AWidget(),
     );
   }
 
@@ -28,3 +29,11 @@ class MyApp extends StatelessWidget {
   }
 }
 
+class AWidget extends StatelessWidget {
+  const AWidget({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text("CodeMobiles");
+  }
+}
