@@ -30,8 +30,13 @@ class _LoginPageState extends State<LoginPage> {
 
   _buildForm() {
     return Container(
+      height: 300,
       margin: EdgeInsets.only(top:50, left: 32, right: 32),
-      child: Text("Form"),
+      child: Column(
+        children: [
+           TextField(decoration: InputDecoration(labelText: "Username"),)
+        ],
+      ),
       color: Colors.white,
     );
   }
