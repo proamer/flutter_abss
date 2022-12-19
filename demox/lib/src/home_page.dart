@@ -13,11 +13,14 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: AppBar(title: Text("HomePage")),
       body: Container(
-        color: Colors.red,
+        height: double.infinity,
+        width: double.infinity,
+        color: Colors.red.shade100,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text("Lek1"),
-            Text("Lek2"),
+            Text("Lek1", style: TextStyle(fontSize: 30)),
+            Text("Lek2", style: TextStyle(fontSize: 30)),
           ],
         ),
       ),
