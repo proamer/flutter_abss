@@ -1,4 +1,5 @@
 import 'package:demo0/src/constants/asset.dart';
+import 'package:demo0/src/pages/app_routes.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -80,22 +81,22 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
-
+    Navigator.pushNamed(context, AppRoute.home);
   }
 
   void _handleRegister() {}
 
-  void _debugDlg(){
+  void _debugDlg() {
     showDialog(
       context: context,
       builder: (context) {
         return Dialog(
             child: SizedBox(
-              height: 300,
-              child: Column(
-                children: [Text("Debug"), Text("Username: ${_usernameController.text}"), Text("Password: ${_passwordController.text}")],
-              ),
-            ));
+          height: 300,
+          child: Column(
+            children: [Text("Debug"), Text("Username: ${_usernameController.text}"), Text("Password: ${_passwordController.text}")],
+          ),
+        ));
       },
     );
   }
