@@ -35,7 +35,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _buildBanner() {
-    return Text("Banner");
+    return Image.asset("assets/images/logo.png");
   }
 
   _buildForm() {
