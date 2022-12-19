@@ -1,3 +1,4 @@
+import 'package:demo0/src/pages/pages.dart';
 import 'package:flutter/material.dart';
 
 class CMApp extends StatelessWidget {
