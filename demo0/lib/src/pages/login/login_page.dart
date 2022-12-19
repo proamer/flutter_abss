@@ -56,7 +56,16 @@ class _LoginPageState extends State<LoginPage> {
     showDialog(
       context: context,
       builder: (context) {
-        return Dialog(child: Text("Hey"));
+        return Dialog(child: SizedBox(
+          height: 300,
+          child: Column(
+            children: [
+              Text("Debug"),
+              Text("Username: ${_usernameController.text}"),
+              Text("Password: ${_passwordController.text}")
+            ],
+          ),
+        ));
       },
     );
   }
