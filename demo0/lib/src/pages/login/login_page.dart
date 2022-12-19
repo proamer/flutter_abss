@@ -31,10 +31,16 @@ class _LoginPageState extends State<LoginPage> {
   _buildForm() {
     return Container(
       height: 300,
-      margin: EdgeInsets.only(top:50, left: 32, right: 32),
+      margin: EdgeInsets.only(top: 50, left: 32, right: 32),
+      padding: EdgeInsets.only(top: 10, left: 32, right: 32),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-           TextField(decoration: InputDecoration(labelText: "Username"),)
+          TextField(decoration: InputDecoration(labelText: "Username")),
+          TextField(decoration: InputDecoration(labelText: "Password")),
+          SizedBox(height: 50,),
+          ElevatedButton(onPressed: (){}, child: Text("Login")),
+          OutlinedButton(onPressed: (){}, child: Text("Register"))
         ],
       ),
       color: Colors.white,
