@@ -14,12 +14,17 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Center(child: Column(
-        children: [
-          Text("OGA1"),
-          Text("OGA2"),
-        ],
-      )),
+      home: _buildAWidget(),
     );
   }
+
+  _buildAWidget() {
+    return Center(child: Column(
+      children: [
+        Text("OGA1"),
+        Text("OGA2"),
+      ],
+    ));
+  }
 }
+
