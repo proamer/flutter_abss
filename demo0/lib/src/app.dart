@@ -5,6 +5,9 @@ class CMApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return MaterialApp(
+      title: "CMApp",
+      home: LoginPage(),
+    );
   }
 }
