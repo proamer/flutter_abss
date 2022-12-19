@@ -18,10 +18,9 @@ class _HomePageState extends State<HomePage> {
         color: Colors.red.shade100,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             _buildMyText("Lek1", color: Colors.red),
-
           ],
         ),
       ),
@@ -31,6 +30,10 @@ class _HomePageState extends State<HomePage> {
   _buildMyText(String value, {required Color color}) {
     return Container(
         color: color,
-        child: Text(value, style: TextStyle(fontSize: 30)));
+        child: Text(value,
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+            )));
   }
 }
