@@ -40,7 +40,6 @@ class _LoginPageState extends State<LoginPage> {
 
   _buildForm() {
     return Container(
-      height: 300,
       margin: EdgeInsets.only(top: 50, left: 32, right: 32),
       padding: EdgeInsets.only(top: 10, left: 32, right: 32),
       child: Column(
@@ -48,6 +47,7 @@ class _LoginPageState extends State<LoginPage> {
         children: [
           TextField(
             controller: _usernameController,
+            keyboardType: TextInputType.emailAddress,
             decoration: const InputDecoration(
               border: InputBorder.none,
               hintText: 'codemobiles@gmail.com',
@@ -56,6 +56,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           TextField(
+            obscureText: true,
             controller: _passwordController,
             decoration: const InputDecoration(
               border: InputBorder.none,
@@ -64,11 +65,10 @@ class _LoginPageState extends State<LoginPage> {
               icon: Icon(Icons.password_outlined),
             ),
           ),
-          SizedBox(
-            height: 50,
-          ),
+          SizedBox(height: 30),
           ElevatedButton(onPressed: _handleLogin, child: Text("Login")),
-          OutlinedButton(onPressed: _handleRegister, child: Text("Register"))
+          OutlinedButton(onPressed: _handleRegister, child: Text("Register")),
+          SizedBox(height: 30),
         ],
       ),
       color: Colors.white,
