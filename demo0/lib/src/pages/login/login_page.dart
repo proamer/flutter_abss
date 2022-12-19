@@ -1,3 +1,4 @@
+import 'package:demo0/src/constants/asset.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -35,7 +36,10 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _buildBanner() {
-    return Image.asset("assets/images/logo.png");
+    return Padding(
+      padding: const EdgeInsets.only(top: 50.0),
+      child: Image.asset(Asset.logoImage),
+    );
   }
 
   _buildForm() {
