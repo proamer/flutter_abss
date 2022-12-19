@@ -18,12 +18,19 @@ class _HomePageState extends State<HomePage> {
         color: Colors.red.shade100,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("Lek1", style: TextStyle(fontSize: 30)),
+            _buildMyText(),
+            Text("Lek2", style: TextStyle(fontSize: 30)),
+            Text("Lek2", style: TextStyle(fontSize: 30)),
             Text("Lek2", style: TextStyle(fontSize: 30)),
           ],
         ),
       ),
     );
+  }
+
+  _buildMyText() {
+    return Text("Lek1", style: TextStyle(fontSize: 30));
   }
 }
