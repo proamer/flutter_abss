@@ -17,8 +17,8 @@ class _HomePageState extends State<HomePage> {
         width: double.infinity,
         color: Colors.red.shade100,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             _buildMyText("Lek1", color: Colors.red),
           ],
