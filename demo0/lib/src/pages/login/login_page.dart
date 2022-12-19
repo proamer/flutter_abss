@@ -11,9 +11,23 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('LoginPage'),
-        ),
-        body: Text("OGA"));
+        body: Container(
+          width: double.infinity,
+            height: double.infinity,
+            color: Colors.black,
+            child: Column(
+              children: [
+                _buildBanner(),
+                _buildForm()
+              ],
+            )));
+  }
+
+  _buildBanner() {
+    return Text("Banner");
+  }
+
+  _buildForm() {
+    return Container(child: Text("Form"), height: 300, color: Colors.white,);
   }
 }
