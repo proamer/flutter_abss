@@ -16,7 +16,11 @@ class _LoginPageState extends State<LoginPage> {
             height: double.infinity,
             color: Colors.black,
             child: Column(
-              children: [_buildBanner(), _buildForm()],
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                _buildBanner(),
+                _buildForm(),
+              ],
             )));
   }
 
@@ -26,8 +30,8 @@ class _LoginPageState extends State<LoginPage> {
 
   _buildForm() {
     return Container(
+      margin: EdgeInsets.only(top:50, left: 32, right: 32),
       child: Text("Form"),
-      height: 300,
       color: Colors.white,
     );
   }
