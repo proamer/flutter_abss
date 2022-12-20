@@ -41,8 +41,8 @@ class CMApp extends StatelessWidget {
         ));
   }
 
-  _initialPage() async {
-    return FutureBuilder(
+  _initialPage()  {
+    return FutureBuilder<SharedPreferences>(
       future: SharedPreferences.getInstance(),
       builder: (context, snapshot) {
         if (snapshot.hasData == false){

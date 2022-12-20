@@ -15,6 +15,8 @@ part 'auth_state.dart';
 
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc() : super(AuthState()) {
+
+    // Login
     on<AuthEvent_Login>((event, emit) async {
       final String username = event.payload.username;
       final String password = event.payload.password;
@@ -29,6 +31,15 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       } else {
         emit(state.copyWith(status: LoginStatus.failed));
       }
+    });
+
+    // Logout
+    on<AuthEvent_Logout>((event, emit) async {
+      SharedPreferences prefs = await SharedPreferences.getInstance();
+      await prefs.clear();
+      Navigator.pushReplacementNamed(navigatorState.currentContext!, AppRoute.login);
+      // Emit
+      emit(state.copyWith(status: LoginStatus.init));
     });
   }
 }
