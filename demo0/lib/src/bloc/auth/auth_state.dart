@@ -6,9 +6,21 @@ class AuthState extends Equatable {
   final LoginStatus status;
   final String dialogMessage;
 
-  const AuthState();
+  const AuthState({
+    this.status = LoginStatus.init,
+    this.dialogMessage = "",
+  });
 
+  AuthState copyWith({
+    LoginStatus? status,
+    String? dialogMessage,
+  }) {
+    return AuthState(
+      status: status ?? this.status,
+      dialogMessage: dialogMessage ?? this.dialogMessage,
+    );
+  }
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [status, dialogMessage];
 }
