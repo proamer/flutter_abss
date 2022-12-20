@@ -1,5 +1,7 @@
+import 'package:demo0/src/bloc/auth/auth_bloc.dart';
 import 'package:demo0/src/bloc/counter/counter_bloc.dart';
 import 'package:demo0/src/constants/asset.dart';
+import 'package:demo0/src/models/user.dart';
 import 'package:demo0/src/pages/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,6 +83,19 @@ class _LoginPageState extends State<LoginPage> {
                 icon: Icon(Icons.password_outlined),
               ),
             ),
+            SizedBox(height: 10),
+            BlocBuilder<AuthBloc, AuthState>(
+              builder: (context, state) {
+                if (state.status == LoginStatus.failed) {
+                  return Text(
+                    "Login failed",
+                    style: TextStyle(color: Colors.red),
+                  );
+                }else{
+                  return SizedBox();
+                }
+              },
+            ),
             SizedBox(height: 30),
             ElevatedButton(onPressed: _handleLogin, child: Text("Login")),
             OutlinedButton(onPressed: _handleRegister, child: Text("Register")),
@@ -92,6 +107,11 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
+    final user = User(
+      _usernameController.text,
+      _passwordController.text,
+    );
+    context.read<AuthBloc>().add(AuthEvent_Login(user));
   }
 
   void _handleRegister() {}

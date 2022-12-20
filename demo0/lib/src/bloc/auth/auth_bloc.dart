@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:demo0/src/app.dart';
 import 'package:demo0/src/constants/network_api.dart';
 import 'package:demo0/src/models/user.dart';
 import 'package:demo0/src/pages/app_routes.dart';
@@ -22,10 +23,11 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString(NetworkAPI.token, 'TExkgk0494oksrkf');
         await prefs.setString(NetworkAPI.username, username);
-        Navigator.pushNamed(context, AppRoute.home);
-
-
-      } else {}
+        Navigator.pushNamed(navigatorState.currentContext!, AppRoute.home);
+        emit(state.copyWith(status: LoginStatus.success));
+      } else {
+        emit(state.copyWith(status: LoginStatus.failed));
+      }
     });
   }
 }
