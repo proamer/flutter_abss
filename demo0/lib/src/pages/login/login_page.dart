@@ -112,10 +112,21 @@ class _LoginPageState extends State<LoginPage> {
 
   _buildCounter() {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        IconButton(onPressed: () {}, icon: Icon(Icons.add)),
-        Text(count.toString()),
-        IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+        IconButton(
+            onPressed: () {
+              count++;
+              setState(() {});
+            },
+            icon: Icon(Icons.add)),
+        Text(count.toString(), style: TextStyle(fontSize: 30)),
+        IconButton(
+            onPressed: () {
+              count--;
+              setState(() {});
+            },
+            icon: Icon(Icons.remove)),
       ],
     );
   }

@@ -1,0 +1,5 @@
+- refresh specific ui when state changed
+- seperatation of concern (login, view, controller, state)
+- share global state
+- escapsulation
+- interfere prevention
