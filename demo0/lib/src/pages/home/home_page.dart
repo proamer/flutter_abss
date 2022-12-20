@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text('HomePage'),
         ),
-        drawer: Drawer(child: Center(child: Text("Hey Hey Hey Hey Hey "))),
+        drawer: CustomDrawer(),
         body: Column(
           children: [
             Text("OGA"),
@@ -28,3 +28,41 @@ class _HomePageState extends State<HomePage> {
         ));
   }
 }
+
+class CustomDrawer extends StatelessWidget {
+  const CustomDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Column(
+        children: [
+          _buildProfile(),
+          ListTile(
+            onTap: () => _showDialogBarcode(context),
+            title: Text("BarCode"),
+            leading: Icon(Icons.bar_chart_outlined, color: Colors.deepOrange),
+          ),
+          ListTile(
+            onTap: () => _showDialogQRImage(context),
+            title: Text("QRCode"),
+            leading: Icon(Icons.qr_code, color: Colors.green),
+          ),
+          ListTile(
+            onTap: () => _showScanQRCode(context),
+            title: Text("Scanner"),
+            leading: const Icon(Icons.qr_code_scanner, color: Colors.blueGrey),
+          ),
+          ListTile(
+            onTap: () => Navigator.pushNamed(context, AppRoute.map),
+            title: Text("Map"),
+            leading: Icon(Icons.map_outlined, color: Colors.blue),
+          ),
+          Spacer(),
+          _buildLogoutButton(),
+        ],
+      ),
+    );
+  }
+}
+
