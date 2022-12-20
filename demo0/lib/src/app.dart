@@ -7,7 +7,7 @@ import 'bloc/auth/auth_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:logger/logger.dart';
 
-
+// 1234
 final formatCurrency = NumberFormat('#,###.000');
 final formatNumber = NumberFormat('#,###');
 final navigatorState = GlobalKey<NavigatorState>();
