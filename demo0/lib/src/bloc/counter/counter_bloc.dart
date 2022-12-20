@@ -15,7 +15,7 @@ class CounterBloc extends Bloc<CounterEvent, CounterState> {
     });
 
     // Remove
-    on<CounterEvent_Add>((event, emit) {
+    on<CounterEvent_Remove>((event, emit) {
       emit(state.copyWith(counter: state.counter-1));
     });
   }
