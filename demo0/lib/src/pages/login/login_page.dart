@@ -1,6 +1,8 @@
+import 'package:demo0/src/bloc/counter/counter_bloc.dart';
 import 'package:demo0/src/constants/asset.dart';
 import 'package:demo0/src/pages/app_routes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -116,14 +118,14 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         IconButton(
             onPressed: () {
-              // count++;
-              setState(() {});
+              context.read<CounterBloc>().add(CounterEvent_Add());
+              print("Counter: " + context.read<CounterBloc>().state.counter.toString());
             },
             icon: Icon(Icons.add)),
-        // Text(count.toString(), style: TextStyle(fontSize: 30)),
+        Text(context.read<CounterBloc>().state.counter.toString(), style: TextStyle(fontSize: 30)),
         IconButton(
             onPressed: () {
-              // count--;
+              context.read<CounterBloc>().add(CounterEvent_Remove());
               setState(() {});
             },
             icon: Icon(Icons.remove)),
