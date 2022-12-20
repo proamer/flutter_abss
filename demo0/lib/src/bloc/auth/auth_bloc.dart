@@ -18,6 +18,8 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     on<AuthEvent_Login>((event, emit) async {
       final String username = event.payload.username;
       final String password = event.payload.password;
+      emit(state.copyWith(status: LoginStatus.fetching));
+      await Future.delayed(Duration(seconds: 1));
 
       if (username == 'admin' && password == '1234') {
         final prefs = await SharedPreferences.getInstance();

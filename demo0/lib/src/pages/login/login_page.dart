@@ -91,7 +91,12 @@ class _LoginPageState extends State<LoginPage> {
                     "Login failed",
                     style: TextStyle(color: Colors.red),
                   );
-                }else{
+                } else if (state.status == LoginStatus.fetching) {
+                  return Text(
+                    "Logging in..",
+                    style: TextStyle(color: Colors.red),
+                  );
+                } else {
                   return SizedBox();
                 }
               },
