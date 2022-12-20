@@ -52,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
 
   _buildForm() {
     return Card(
-      elevation: 5,
+      elevation: 7,
       margin: EdgeInsets.only(top: 50, left: 32, right: 32),
       child: Padding(
         padding: const EdgeInsets.all(24.0),
