@@ -28,23 +28,30 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     print("Whole refresh");
     return Scaffold(
-        body: Container(
-            width: double.infinity,
-            height: double.infinity,
-            // color: Colors.black,
-            child: SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  _buildBanner(),
-                  _buildForm(),
-                  _buildCounter(),
-                  SizedBox(
-                    height: 30,
-                  )
-                ],
-              ),
-            )));
+        body: BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            if (state.status == LoginStatus.failed){
+              _debugDlg();
+            }
+          },
+          child: Container(
+              width: double.infinity,
+              height: double.infinity,
+              // color: Colors.black,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    _buildBanner(),
+                    _buildForm(),
+                    _buildCounter(),
+                    SizedBox(
+                      height: 30,
+                    )
+                  ],
+                ),
+              )),
+        ));
   }
 
   _buildBanner() {
@@ -94,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                 } else if (state.status == LoginStatus.fetching) {
                   return Text(
                     "Logging in..",
-                    style: TextStyle(color: Colors.red),
+                    style: TextStyle(color: Colors.grey),
                   );
                 } else {
                   return SizedBox();
@@ -127,11 +134,11 @@ class _LoginPageState extends State<LoginPage> {
       builder: (context) {
         return Dialog(
             child: SizedBox(
-          height: 300,
-          child: Column(
-            children: [Text("Debug"), Text("Username: ${_usernameController.text}"), Text("Password: ${_passwordController.text}")],
-          ),
-        ));
+              height: 300,
+              child: Column(
+                children: [Text("Debug"), Text("Username: ${_usernameController.text}"), Text("Password: ${_passwordController.text}")],
+              ),
+            ));
       },
     );
   }
