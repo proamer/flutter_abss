@@ -12,6 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
+  int count = 0;
 
   @override
   void initState() {
@@ -33,6 +34,7 @@ class _LoginPageState extends State<LoginPage> {
                 children: [
                   _buildBanner(),
                   _buildForm(),
+                  _buildCounter(),
                   SizedBox(height: 30,)
                 ],
               ),
@@ -86,6 +88,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
+
     Navigator.pushNamed(context, AppRoute.home);
   }
 
@@ -105,4 +108,6 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
   }
+
+  _buildCounter() {}
 }
