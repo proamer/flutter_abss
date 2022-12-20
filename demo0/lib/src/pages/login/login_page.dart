@@ -92,7 +92,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
-    Navigator.pushNamed(context, AppRoute.home);
   }
 
   void _handleRegister() {}
