@@ -1,4 +1,5 @@
 import 'package:demo0/src/bloc/auth/auth_bloc.dart';
+import 'package:demo0/src/pages/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -64,5 +65,15 @@ class CustomDrawer extends StatelessWidget {
       ),
     );
   }
+
+  _buildProfile() {}
+
+  _showDialogBarcode(BuildContext context) {}
+
+  _showDialogQRImage(BuildContext context) {}
+
+  _showScanQRCode(BuildContext context) {}
+
+  _buildLogoutButton() {}
 }
 
