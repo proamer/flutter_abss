@@ -35,7 +35,9 @@ class _LoginPageState extends State<LoginPage> {
                   _buildBanner(),
                   _buildForm(),
                   _buildCounter(),
-                  SizedBox(height: 30,)
+                  SizedBox(
+                    height: 30,
+                  )
                 ],
               ),
             )));
@@ -88,7 +90,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleLogin() {
-
     Navigator.pushNamed(context, AppRoute.home);
   }
 
@@ -109,5 +110,13 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  _buildCounter() {}
+  _buildCounter() {
+    return Row(
+      children: [
+        IconButton(onPressed: () {}, icon: Icon(Icons.add)),
+        Text(count.toString()),
+        IconButton(onPressed: () {}, icon: Icon(Icons.remove)),
+      ],
+    );
+  }
 }
