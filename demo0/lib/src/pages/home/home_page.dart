@@ -66,7 +66,9 @@ class CustomDrawer extends StatelessWidget {
     );
   }
 
-  _buildProfile() {}
+  _buildProfile() {
+    return Text("Profile");
+  }
 
   _showDialogBarcode(BuildContext context) {}
 
@@ -74,6 +76,8 @@ class CustomDrawer extends StatelessWidget {
 
   _showScanQRCode(BuildContext context) {}
 
-  _buildLogoutButton() {}
+  _buildLogoutButton() {
+    return Text("Logout");
+  }
 }
 
