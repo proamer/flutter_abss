@@ -12,7 +12,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
-  int count = 0;
+
 
   @override
   void initState() {
@@ -116,14 +116,14 @@ class _LoginPageState extends State<LoginPage> {
       children: [
         IconButton(
             onPressed: () {
-              count++;
+              // count++;
               setState(() {});
             },
             icon: Icon(Icons.add)),
-        Text(count.toString(), style: TextStyle(fontSize: 30)),
+        // Text(count.toString(), style: TextStyle(fontSize: 30)),
         IconButton(
             onPressed: () {
-              count--;
+              // count--;
               setState(() {});
             },
             icon: Icon(Icons.remove)),
