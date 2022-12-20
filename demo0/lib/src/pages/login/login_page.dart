@@ -15,7 +15,6 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
-
   @override
   void initState() {
     super.initState();
@@ -25,6 +24,7 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    print("Whole refresh");
     return Scaffold(
         body: Container(
             width: double.infinity,
@@ -119,14 +119,16 @@ class _LoginPageState extends State<LoginPage> {
         IconButton(
             onPressed: () {
               context.read<CounterBloc>().add(CounterEvent_Add());
-              print("Counter: " + context.read<CounterBloc>().state.counter.toString());
             },
             icon: Icon(Icons.add)),
-        Text(context.read<CounterBloc>().state.counter.toString(), style: TextStyle(fontSize: 30)),
+        BlocBuilder<CounterBloc, CounterState>(
+          builder: (context, state) {
+            return Text(state.counter.toString(), style: TextStyle(fontSize: 30));
+          },
+        ),
         IconButton(
             onPressed: () {
               context.read<CounterBloc>().add(CounterEvent_Remove());
-              setState(() {});
             },
             icon: Icon(Icons.remove)),
       ],
