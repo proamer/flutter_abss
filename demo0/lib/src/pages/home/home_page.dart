@@ -16,6 +16,7 @@ class _HomePageState extends State<HomePage> {
         appBar: AppBar(
           title: Text('HomePage'),
         ),
+        drawer: Text("Hey Hey Hey Hey Hey "),
         body: Column(
           children: [
             Text("OGA"),
