@@ -1,4 +1,6 @@
+import 'package:demo0/src/bloc/auth/auth_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -18,7 +20,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             Text("OGA"),
             ElevatedButton(
-              onPressed: () => Navigator.pop(context),
+              onPressed: () => context.read<AuthBloc>().add(AuthEvent_Logout()),
               child: Text("Back"),
             )
           ],
