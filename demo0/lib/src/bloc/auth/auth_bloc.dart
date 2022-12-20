@@ -25,7 +25,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString(NetworkAPI.token, 'TExkgk0494oksrkf');
         await prefs.setString(NetworkAPI.username, username);
-        Navigator.pushNamed(navigatorState.currentContext!, AppRoute.home);
         emit(state.copyWith(status: LoginStatus.success));
       } else {
         emit(state.copyWith(status: LoginStatus.failed));

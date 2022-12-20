@@ -1,12 +1,13 @@
 import 'package:demo0/src/bloc/counter/counter_bloc.dart';
+import 'package:demo0/src/constants/network_api.dart';
 import 'package:demo0/src/pages/app_routes.dart';
 import 'package:demo0/src/pages/pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'bloc/auth/auth_bloc.dart';
 import 'package:intl/intl.dart';
 import 'package:logger/logger.dart';
-
 
 final formatCurrency = NumberFormat('#,###.000');
 final formatNumber = NumberFormat('#,###');
@@ -18,7 +19,6 @@ final logger = Logger(
     colors: true,
   ),
 );
-
 
 class CMApp extends StatelessWidget {
   const CMApp({Key? key}) : super(key: key);
@@ -35,9 +35,24 @@ class CMApp extends StatelessWidget {
         ],
         child: MaterialApp(
           title: "CMApp",
-          home: LoginPage(),
+          home: _initialPage(),
           routes: AppRoute.all,
           navigatorKey: navigatorState,
         ));
+  }
+
+  _initialPage() async {
+    return FutureBuilder(
+      future: SharedPreferences.getInstance(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData == false){
+          return Text("Loading");
+        }else{
+          final prefs = snapshot.data!;
+          final token = prefs.getString(NetworkAPI.token) ?? "";
+          return token.isEmpty ? LoginPage() : HomePage();
+        }
+      },
+    );
   }
 }
